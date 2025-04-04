@@ -265,6 +265,10 @@
     }
   }
 
+  [aria-controls="primary-nav"] {
+    display: none;
+  }
+
   .primary-navigation {
     ul {
       list-style: none;
@@ -278,6 +282,7 @@
     }
 
     @media (width < 760px) {
+      display: none;
       position: absolute;
       z-index: 10;
       top: 0;
@@ -300,6 +305,16 @@
         margin-block-start: 1.5rem;
         padding-block-start: 1.5rem;
       }
+    }
+  }
+
+  @media (width < 760px) {
+    [aria-controls="primary-nav"] {
+      display: block;
+    }
+
+    [aria-expanded="true"] + .primary-navigation {
+      display: block;
     }
   }
 
